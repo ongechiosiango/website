@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Bold, sans-serif;
+            background-color: hsl(73, 96%, 71%);
+            color: rgb(66, 58, 58);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+/* Light Theme */
+.light-mode {
+    background-color: hsl(73, 96%, 71%);
+    color: rgb(66, 58, 58);
+}
+
+/* Dark Theme */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+        header {
+            background-color: hsl(108, 77%, 55%);
+            color: #21eb6e;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            color: limegreen;
+        }
+        section {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        section.active {
+            display: block;
+        }
+        img {
+            margin: 10px;
+            border: 2px solid #333;
+            width: 300px;
+            height: auto;
+    
+        }
+        footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+            font-size: 14px;
+        }
+        footer a {
+            color: limegreen;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        #content {
+            flex-grow: 1;
+        }
+        #accessibility-settings {
+            display: none;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            z-index: 999;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #language-settings {
+    padding: 10px;
+    margin-top: 10px;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode header {
+            background-color: #333;
+        }
+        .dark-mode footer {
+            background-color: #222
+        }
+         </style>
+</head>
+<body class="light-mode"></body>
+    <header>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">HOME</a></li>
+                <li><a onclick="showSection('contact')">CONTACT</a></li>
+                <li><a onclick="showSection('gallery')">GALLERY</a></li>
+                <li><a onclick="showSection('about')">ABOUT</a></li>
+                <li><a onclick="showSection('education')">EDUCATION</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="active">
+        <h1>Welcome to My Website</h1>
+        <p>Hello and welcome to my personal website. Feel free to explore my dedication to:
+
+            Crafting stunning web designs,
+            
+            Delivering reliable software and hardware solutions,
+            
+            Building robust network architectures,
+            
+            Innovating with electronics and
+            
+            Offering exceptional IT services.
+            We are beyond excited to welcome you as you begin your journey into the dynamic and ever-evolving world of Information and Communication Technology (ICT) and Information Technology (IT). This is not just a course; it's the gateway to endless possibilities, innovation, and the future!
+            
+            ICT and IT are the backbone of modern society. From revolutionizing businesses to connecting people across the globe, technology has become the driving force of change, and you’re now part of this incredible transformation. Whether you dream of designing groundbreaking software, managing complex systems, exploring the depths of cybersecurity, or innovating with artificial intelligence, this field is your canvas to create, explore, and thrive.
+            
+            This is your chance to:
+            
+            Learn Cutting-Edge Skills: From programming and data analysis to networking and cloud computing, you’ll gain the knowledge and tools to become a tech leader.
+            
+            Solve Real-World Problems: Use technology to address challenges in industries like healthcare, finance, education, and beyond.
+            
+            Unleash Your Creativity: Innovate, design, and build solutions that shape the way people live and work.
+            
+            Be Part of a Global Community: Collaborate with like-minded individuals and experts who share your passion for technology.
+            
+            
+            We understand that every step of this journey matters, and we are here to guide, support, and inspire you along the way. Our resources, expert instructors, and interactive learning environment are designed to help you excel and achieve your goals.
+            
+            As you dive into this exciting adventure, remember that the possibilities are limitless. You’re not just learning ICT or IT you’re preparing to make an impact on the world.
+            
+            Welcome aboard and let’s build the future together! The world of technology is yours to explore and we can’t wait to see all the amazing things you’ll achieve. </p>
+    </section>
+<!-- Accessibility Settings Section -->
+<div id="accessibility-settings">
+    <h2>Accessibility Options</h2>
+    <h3>Change Theme</h3>
+    <button onclick="changeTheme('light')">Light Mode</button>
+    <button onclick="changeTheme('dark')">Dark Mode</button>
+
+    <br><br>
+    <button onclick="toggleAccessibilityMenu()">Close Settings</button>
+</div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1 style="text-decoration: underline;">Contact Me</h1>
+        <p> <h2>Email:</h2> calebosiango5@gmail.com</p>
+        <p> <h3>Phone:</h3> +254746327970</p>
+        <p> <h4>Address:</h4> 40500 Mombasa </p>
+
+        <h2 style="text-decoration: underline;">Follow Me</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="https://www.facebook.com/ongechi osiango caleb" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://wa.me/254746327970" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/calebosiango" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://www.tiktok.com/@ongechiosiangocaleb" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+        </ul>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h1>Gallery</h1>
+        <p>Every photograph is a frozen moment in time, a visual diary of the places we go, the people we meet, and the experiences that shape us. The images in this gallery reflect more than just scenes from my life — they tell the story of my journey through the dynamic streets of Mombasa, the inspiring corridors of TUM, and the unbreakable bonds formed with friends who have become a second family. They speak of laughter shared under the warm coastal sun, of learning and growth in the classrooms that challenge us to reach new heights, and of quiet moments spent exploring the rich culture and history that surround us. Each photo is not just an image; it’s a memory carved into time, an expression of my passion for life, my pursuit of knowledge, and my deep appreciation for the beauty that surrounds me. This gallery is a window into my world — a celebration of moments both big and small, of the people, places, and experiences that make life worth living. It’s a tribute to the unforgettable moments that fill the spaces between our ambitions and dreams, captured in a frame for eternity</p>
+        <img src="images/img1.jpg.jpeg" alt="Image 1" width="300" height="100">
+        <img src="images/img2.jpg.jpeg" alt="Image 2" width="300" height="200">
+        <img src="images/img3.jpg.jpeg" alt="Image 3" width="300" height="200">
+        <img src="images/img5.jpg.jpeg" alt="Image 4" width="300" height="200">
+        <img src="images/img4.jpg.jpeg" alt="Image 5" width="300" height="200">
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>About Me</h1>
+        <p>Hello I’m Caleb Osiango Ongechi, and welcome to my website.
+
+            I’m passionate about [in technology, creativity] and I’m excited to share my experiences and insights with you. Based in Mombasa. I have been on a journey of exploration and growth discovering what truly inspires me.
+            
+            In my spare time, you can find me [diving & swimming , exploring new places, reading, creating art etc.]. I believe in  philosophy or value, e.g., the importance of creativity, the power of connection and I strive to incorporate that into everything I do.
+            
+            This website is a space for me to share my work, thoughts and passions with you. I hope you find something that resonates with you during your visit.
+            
+            
+            Feel free to reach out if you’d like to connect, collaborate, or just say hello.</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h1>Education Background</h1>
+        <p>I began my educational journey at Heshima Academy, where I completed my nursery and pre-unit classes. In 2010, I transitioned to Kiemuma Primary School, where I studied from Standard 1 through Standard 6. I then moved to Nyaramba D.O.K for my final two years of primary education, completing classes 7 and 8.
+
+
+            My hard work paid off when I performed well in my KCPE exams, which opened the door for me to attend Nyakemincha High School from 2018 to March 2022. There, I achieved a commendable grade that allowed me to further my studies at the Technical University of Mombasa (TUM), where I am currently pursuing a Bachelor of Technology in Information Communication Technology (I.C.T). </p>
+    </section>
+        <!-- Footer Section -->
+     <footer>
+        <p>&copy; 2025 Caleb Osiango Ongechi. All Rights Reserved.</p>
+    
+        <!-- Accessibility Menu and Report Issue Links -->
+    <div id="footer-accessibility">
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="#accessibility-options">Accessibility</a></li>
+            <!-- Report an Issue with a mailto link -->
+            <li><a href="mailto:calebosiango5@gmail.com?subject=Report%20an%20Issue%20on%20the%20Website&body=Please%20describe%20the%20issue%20you%20encountered%20and%20suggest%20any%20improvements.%20Thank%20you!">Report an Issue</a></li>
+        </ul>
+    </div>
+    <!-- 3-dot Button -->
+    <div style="position: fixed; bottom: 10px; right: 10px;">
+        <button 
+            onclick="window.location.href='newpage.html'" 
+            style="background-color: #333; color: white; border: none; border-radius: 50%; padding: 10px 15px; font-size: 24px; cursor: pointer; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+            &#x2022;&#x2022;&#x2022;
+        </button>
+    </div>
+</footer>
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll("section");
+        sections.forEach(section => {
+            section.classList.remove("active");
+        });
+
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.classList.add("active");
+    }
+
+    function toggleAccessibilityMenu() {
+        const settingsMenu = document.getElementById('accessibility-settings');
+        settingsMenu.style.display = (settingsMenu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function changeTheme(theme) {
+        const body = document.body;
+
+        // Remove both themes
+        body.classList.remove('light-mode', 'dark-mode');
+
+        // Add the selected theme class
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.add('light-mode');
+        }
+    }
+
+    function changeLanguage(language) {
+        const homeTitle = document.getElementById('home-title');
+        const homeDescription = document.getElementById('home-description');
+
+        if (language === 'english') {
+            homeTitle.innerText = 'Welcome to My Website';
+            homeDescription.innerText = 'This is the home section in English.';
+        } else if (language === 'kiswahili') {
+            homeTitle.innerText = 'Karibu kwenye Tovuti Yangu';
+            homeDescription.innerText = 'Huu ni sehemu ya nyumbani kwa Kiswahili.';
+        } else if (language === 'ekegusii') {
+            homeTitle.innerText = 'Bwakire Bwakire Kyoe';
+            homeDescription.innerText = 'Ekegeano kora bwakire bwatire ekegusii.';
+        }
+    }
+</script>
+</body>
+</html>
